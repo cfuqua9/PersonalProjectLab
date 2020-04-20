@@ -16,12 +16,15 @@ namespace PersonalProjectLab
             //if the input is soup
             if (input == "soup")
             {
+                Order souporder = new Order();
+                souporder.addordertype(input);
                 String item;
                 //prompt the user for the type of soup
                 Console.Write("what kind soup do you want?\t");
                 item = Console.ReadLine();
+                souporder.addorderdetail(item, 0);
                 //display the ordered items
-                Console.WriteLine("You have ordered : " + item + " " + input);
+                Console.WriteLine("You have ordered : " + souporder.getorderdetails());
                 Console.WriteLine("Thank You For Ordering!");
             }
             //if the user choses salad
@@ -33,7 +36,7 @@ namespace PersonalProjectLab
                 Console.Write("Enter Number of topping :\t");
                 num = Convert.ToInt32(Console.ReadLine());
                 //prompt the user to choose from a list of topppings
-                Console.Write("croutons\ncarrots\neggs\ntomatoes\ntomatoes\nEnter youe choice:\t");
+                Console.Write("croutons\ncarrots\neggs\ntomatoes\nEnter youe choice:\t");
                 toppings = Console.ReadLine();
                 //display the ordered items
                 Console.WriteLine("You have ordered : " + num + " " + toppings + " " + input);
